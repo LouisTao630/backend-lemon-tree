@@ -1,4 +1,4 @@
-package app.web;
+package app.web.controller;
 
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;

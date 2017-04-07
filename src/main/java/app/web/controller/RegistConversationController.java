@@ -21,16 +21,19 @@ public class RegistConversationController {
 		RegistSpokenSentence s = new RegistSpokenSentence();
 		s.setId(0);
 		s.setSentence(sentences[0]);
+		s.setType("email");
 		speakQueue.add(s);
 
 		s = new RegistSpokenSentence();
 		s.setId(1);
 		s.setSentence(sentences[1]);
+		s.setType("name");
 		speakQueue.add(s);
 
 		s = new RegistSpokenSentence();
 		s.setId(2);
 		s.setSentence(sentences[2]);
+		s.setType("password");
 		speakQueue.add(s);
 
 		return speakQueue;
