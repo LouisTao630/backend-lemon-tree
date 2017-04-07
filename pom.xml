@@ -11,6 +11,9 @@
     <spring.version>4.3.7.RELEASE</spring.version>
     <junit.version>4.12</junit.version>
     <jedis.version>2.9.0</jedis.version>
+    <servlet.version>3.1.0</servlet.version>
+    <dbcp.version>2.1.1</dbcp.version>
+    <h2.version>1.4.194</h2.version>
   </properties>
   <dependencies>
     <!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -30,7 +33,7 @@
     <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
-        <version>3.1.0</version>
+        <version>${servlet.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
     <dependency>
@@ -44,7 +47,7 @@
     <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-dbcp2</artifactId>
-        <version>2.1.1</version>
+        <version>${dbcp.version}</version>
     </dependency>
     
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
@@ -58,7 +61,7 @@
     <dependency>
         <groupId>com.h2database</groupId>
         <artifactId>h2</artifactId>
-        <version>1.4.194</version>
+        <version>${h2.version}</version>
     </dependency>
     
     <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
