@@ -83,7 +83,7 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-redis</artifactId>
-			<version>{$spring.data.redis.version}</version>
+			<version>${spring.data.redis.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
@@ -130,6 +130,6 @@
 
 	</dependencies>
 	<build>
-		<finalName>web-app</finalName>
+		<finalName>lemon-tree</finalName>
 	</build>
 </project>

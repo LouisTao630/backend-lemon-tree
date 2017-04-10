@@ -20,14 +20,14 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	@Bean
 	public FreeMarkerConfigurer freeMarkerConfigurer() {
 		FreeMarkerConfigurer cfg = new FreeMarkerConfigurer();
-		cfg.setTemplateLoaderPath("/WEB-INF/views/html/");
+		cfg.setTemplateLoaderPath("/views/html/");
 		return cfg;
 	}
 
 	@Bean
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-		resolver.setPrefix("/WEB-INF/views/jsp/");
+		resolver.setPrefix("/views/jsp/");
 		resolver.setSuffix(".jsp");
 		resolver.setOrder(1);
 		resolver.setExposeContextBeansAsAttributes(true);
