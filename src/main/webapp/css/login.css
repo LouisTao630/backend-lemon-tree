@@ -17,11 +17,11 @@ body {
     text-align: center;
 }
 
-.topic {
+#statement {
     display: none;
 }
 
-.topic.active {
+#statement.active {
     display: block;
     margin: 0 auto;
     -webkit-animation-name: fadeIn;

@@ -10,6 +10,8 @@ public class RegistSpokenSentence {
 
 	private String sentence;
 
+	private String type;
+
 	public int getId() {
 		return id;
 	}
@@ -24,5 +26,13 @@ public class RegistSpokenSentence {
 
 	public void setSentence(String sentence) {
 		this.sentence = sentence;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }
