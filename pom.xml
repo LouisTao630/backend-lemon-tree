@@ -124,6 +124,6 @@
 
 	</dependencies>
 	<build>
-		<finalName>backend-lemon-tree</finalName>
+		<finalName>backendLemonTree</finalName>
 	</build>
 </project>
