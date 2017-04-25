@@ -18,6 +18,7 @@
 		<freemark.version>2.3.22</freemark.version>
 		<jackson.version>2.9.0.pr2</jackson.version>
 		<jsonpath.version>2.2.0</jsonpath.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 
