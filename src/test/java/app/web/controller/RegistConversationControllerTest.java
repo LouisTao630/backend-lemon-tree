@@ -32,7 +32,7 @@ public class RegistConversationControllerTest {
 	@Test
 	public void test() throws Exception {
 		MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
-		mockMvc.perform(get("/regist/speak").locale(Locale.SIMPLIFIED_CHINESE).param("locale", "zh_CN").cookie(new Cookie("lang", "en_US"))).andExpect(jsonPath("$").isArray());
+		mockMvc.perform(get("/regist/steps").locale(Locale.SIMPLIFIED_CHINESE).param("locale", "zh_CN").cookie(new Cookie("lang", "en_US"))).andExpect(jsonPath("$").isArray());
 	}
 
 }
