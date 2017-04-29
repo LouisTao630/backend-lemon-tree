@@ -6,11 +6,13 @@ import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.stereotype.Service;
 
 import app.service.RegistCustomerService;
 import app.web.data.REGIST_SENTENCE;
 import app.web.data.RegistSpokenSentence;
 
+@Service
 public class RegistCustomerServiceImpl implements RegistCustomerService {
 
 	@Autowired
@@ -27,7 +29,7 @@ public class RegistCustomerServiceImpl implements RegistCustomerService {
 			s.setType("email");
 			speakQueue.add(s);
 		}
-		
+
 		return speakQueue;
 	}
 

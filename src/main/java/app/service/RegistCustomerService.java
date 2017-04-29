@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import app.web.data.RegistSpokenSentence;
 
-@Service
+
 public interface RegistCustomerService {
 
 	/**
