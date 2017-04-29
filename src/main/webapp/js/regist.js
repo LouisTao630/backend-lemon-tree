@@ -7,7 +7,7 @@ var step;
 
 function initConversation(){
 	var request = new XMLHttpRequest();
-	request.open("Get","/regist/speak");
+	request.open("Get","/regist/steps");
 	request.setRequestHeader("Content-Type","application/json");
 	request.onreadystatechange=function(){
 		if(request.readyState ===4 && request.status===200){

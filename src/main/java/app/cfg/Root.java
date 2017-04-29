@@ -9,30 +9,30 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
-@ComponentScan(basePackages={"app"},
-excludeFilters={@Filter(type=FilterType.ANNOTATION,value=EnableWebMvc.class)})
+@ComponentScan(basePackages = { "app"}, excludeFilters = { @Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class) })
 public class Root {
 
 	@Profile("Product")
 	@Bean
-	public DataSource jndiDS(){
+	public DataSource jndiDS() {
 		JndiObjectFactoryBean jndiObjectFB = new JndiObjectFactoryBean();
 		jndiObjectFB.setJndiName("jdbc/mysql");
 		jndiObjectFB.setResourceRef(true);
 		jndiObjectFB.setProxyInterface(javax.sql.DataSource.class);
 		return (DataSource) jndiObjectFB.getObject();
-		
+
 	}
-	
+
 	@Profile("Dev")
 	@Bean
-	public DataSource mysqlDS(){
+	public DataSource mysqlDS() {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName("");
 		ds.setUrl("jdbc:mysql:tcp://192.168.0.1:3306/web_app");
@@ -42,15 +42,19 @@ public class Root {
 		ds.setMaxIdle(5);
 		return ds;
 	}
-	
+
 	@Profile("Local")
 	@Bean
-	public DataSource embeddedDS(){
-		return new EmbeddedDatabaseBuilder()
-			.setType(EmbeddedDatabaseType.H2)
-			.addScript("classpath:/sql/h2/schema.sql")
-			.addScript("classpath:/sql/h2/test-data.sql")
-			.build();
+	public DataSource embeddedDS() {
+		return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).addScript("classpath:/sql/h2/schema.sql").addScript("classpath:/sql/h2/test-data.sql").build();
 	}
+
 	
+	@Bean
+	public ResourceBundleMessageSource messageSource() {
+		ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+		source.addBasenames("i18n/messages");
+		return source;
+	}
+
 }
