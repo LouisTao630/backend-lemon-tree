@@ -16,7 +16,7 @@ import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
-@ComponentScan(basePackages = { "app"}, excludeFilters = { @Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class) })
+@ComponentScan(excludeFilters = { @Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class) })
 public class Root {
 
 	@Profile("Product")

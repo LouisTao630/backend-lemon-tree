@@ -7,10 +7,10 @@ import org.springframework.web.filter.ServletContextRequestLoggingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-	
+
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class<?>[] { Root.class, RedisConfig.class,BusinessServiceConfig.class };
+		return new Class<?>[] { Root.class };
 	}
 
 	@Override

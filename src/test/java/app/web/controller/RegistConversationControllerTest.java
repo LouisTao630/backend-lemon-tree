@@ -23,7 +23,7 @@ import app.cfg.WebConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextHierarchy({ @ContextConfiguration(name = "parent", classes = Root.class), @ContextConfiguration(name = "child", classes = WebConfig.class) })
+@ContextHierarchy({ @ContextConfiguration(name = "parent", classes = { Root.class}), @ContextConfiguration(name = "child", classes = { WebConfig.class }) })
 public class RegistConversationControllerTest {
 
 	@Autowired
