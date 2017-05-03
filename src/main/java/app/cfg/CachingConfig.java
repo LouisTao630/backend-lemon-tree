@@ -23,6 +23,7 @@ public class CachingConfig {
 		List<CacheManager> managers = new ArrayList<CacheManager>();
 		managers.add(jcm);
 		managers.add(rdm);
+		manager.setCacheManagers(managers);
 		return manager;
 	}
 }

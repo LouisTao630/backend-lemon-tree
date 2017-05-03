@@ -19,16 +19,17 @@ public class RegistCustomerServiceImpl implements RegistCustomerService {
 	@Autowired
 	private MessageSource source;
 
-//	@Cacheable("registAllSteps")
+	@Cacheable("registAllSteps")
 	public List<RegistSpokenSentence> getAllSteps() {
 
 		List<RegistSpokenSentence> speakQueue = new ArrayList<RegistSpokenSentence>();
 
+		int step = 0;
 		for (REGIST_SENTENCE sentence : REGIST_SENTENCE.values()) {
 			RegistSpokenSentence s = new RegistSpokenSentence();
-			s.setId(0);
+			s.setId(step++);
 			s.setSentence(source.getMessage(sentence.name(), null, Locale.SIMPLIFIED_CHINESE));
-			s.setType("email");
+			s.setType(sentence.getType());
 			speakQueue.add(s);
 		}
 		return speakQueue;
