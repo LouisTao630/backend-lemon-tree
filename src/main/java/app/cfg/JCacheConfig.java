@@ -16,7 +16,8 @@ public class JCacheConfig {
 	@Bean
 	public CacheManager ehcache() throws URISyntaxException {
 		CachingProvider provider = Caching.getCachingProvider("org.ehcache.jsr107.EhcacheCachingProvider");
-		CacheManager cacheManager = provider.getCacheManager(getClass().getResource("/db_cfg/ehcache.xml").toURI(), getClass().getClassLoader());
+		CacheManager cacheManager = provider.getCacheManager(getClass().getResource("/db_cfg/ehcache.xml").toURI(),
+				getClass().getClassLoader());
 		return cacheManager;
 	}
 

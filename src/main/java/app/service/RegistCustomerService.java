@@ -2,10 +2,7 @@ package app.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import app.web.data.RegistSpokenSentence;
-
 
 public interface RegistCustomerService {
 

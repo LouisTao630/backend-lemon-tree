@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ public class RegistCustomerServiceImpl implements RegistCustomerService {
 	@Autowired
 	private MessageSource source;
 
+//	@Cacheable("registAllSteps")
 	public List<RegistSpokenSentence> getAllSteps() {
 
 		List<RegistSpokenSentence> speakQueue = new ArrayList<RegistSpokenSentence>();
@@ -29,7 +31,6 @@ public class RegistCustomerServiceImpl implements RegistCustomerService {
 			s.setType("email");
 			speakQueue.add(s);
 		}
-
 		return speakQueue;
 	}
 

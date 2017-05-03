@@ -23,7 +23,8 @@ import app.cfg.WebConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextHierarchy({ @ContextConfiguration(name = "parent", classes = { Root.class}), @ContextConfiguration(name = "child", classes = { WebConfig.class }) })
+@ContextHierarchy({ @ContextConfiguration(name = "parent", classes = { Root.class }),
+		@ContextConfiguration(name = "child", classes = { WebConfig.class }) })
 public class RegistConversationControllerTest {
 
 	@Autowired
@@ -32,7 +33,8 @@ public class RegistConversationControllerTest {
 	@Test
 	public void test() throws Exception {
 		MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
-		mockMvc.perform(get("/regist/steps").locale(Locale.SIMPLIFIED_CHINESE).param("locale", "zh_CN").cookie(new Cookie("lang", "en_US"))).andExpect(jsonPath("$").isArray());
+		mockMvc.perform(get("/regist/steps").locale(Locale.SIMPLIFIED_CHINESE).param("locale", "zh_CN")
+				.cookie(new Cookie("lang", "en_US"))).andExpect(jsonPath("$").isArray());
 	}
 
 }
